@@ -65,6 +65,25 @@ python -m venv .venv && . .venv/bin/activate
 pip install -e ".[gui]"
 ```
 
+### Windows executable (no Python required)
+
+Every [release](https://github.com/sasoun1366/backuprig/releases) ships prebuilt, standalone
+Windows binaries, built automatically on `windows-latest` by GitHub Actions:
+
+- `backuprig-gui-<version>-windows.exe` — the desktop app.
+- `backuprig-cli-<version>-windows.exe` — the command-line tool.
+
+Just download and run — no Python or dependencies needed. To build them yourself (e.g. on your
+own Windows machine), install the `packaging` extra and run PyInstaller against the provided spec
+files:
+
+```bash
+pip install -e ".[packaging]"
+pyinstaller packaging/backuprig-gui.spec
+pyinstaller packaging/backuprig-cli.spec
+# binaries land in dist/
+```
+
 ## Quick start (GUI)
 
 ```bash
