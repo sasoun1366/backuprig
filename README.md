@@ -194,6 +194,23 @@ etc.) - the adapter interface is a small, pure-function contract, see
 - [ ] Packaged installers (PyInstaller) for Windows/macOS so non-Python
       users can just run it
 
+<!-- support:start -->
+## Support the project
+
+**backuprig** is built and maintained in my own time, and it stays free to use
+and free to fork. If it saved you an outage — or just an afternoon — you can help
+fund the next round of test hardware and the time to add more vendors:
+
+**USDT (TRC20)**
+
+```text
+TMEyd1JZqdCjjKTc4zG2fhjzAYFKXCUWnA
+```
+
+This is the only address I publish for these projects. Anything else claiming to be
+me is not mine.
+<!-- support:end -->
+
 ## License
 
 MIT - see [LICENSE](LICENSE).
