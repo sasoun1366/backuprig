@@ -9,13 +9,48 @@ permissions:
   contents: write
 
 jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[packaging]"
+      - name: Build GUI executable
+        run: pyinstaller packaging/backuprig-gui.spec
+      - name: Build CLI executable
+        run: pyinstaller packaging/backuprig-cli.spec
+      - name: Rename artifacts with version
+        shell: bash
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir -p out
+          cp dist/backuprig-gui.exe "out/backuprig-gui-${version}-windows.exe"
+          cp dist/backuprig-cli.exe "out/backuprig-cli-${version}-windows.exe"
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-executables
+          path: out/*.exe
+
   release:
+    needs: build-windows
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Download Windows executables
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-executables
+          path: out
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
           draft: false
           prerelease: false
+          files: out/*.exe

@@ -40,6 +40,7 @@ dependencies = [
 gui = ["PyQt6>=6.5"]
 dev = ["pytest>=7.0"]
 dev-gui = ["pytest>=7.0", "PyQt6>=6.5"]
+packaging = ["pyinstaller>=6.0", "PyQt6>=6.5"]
 
 [project.urls]
 Homepage = "https://github.com/sasoun1366/backuprig"
