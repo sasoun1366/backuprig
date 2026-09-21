@@ -4,6 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GUI](https://img.shields.io/badge/GUI-PyQt6-41cd52)](backuprig/gui/app.py)
+[![Telegram](https://img.shields.io/badge/Telegram-%40luyavaai-26A5E4?logo=telegram&logoColor=white)](https://t.me/luyavaai)
 
 A cross-platform desktop app (with a full CLI too) for backing up and
 diffing configuration from mixed-vendor network and virtualization gear:
@@ -193,6 +194,11 @@ etc.) - the adapter interface is a small, pure-function contract, see
       point
 - [ ] Packaged installers (PyInstaller) for Windows/macOS so non-Python
       users can just run it
+
+## Stay updated
+
+New releases are announced on Telegram: **[@luyavaai](https://t.me/luyavaai)** — version
+notes, upgrade advice and practical MikroTik / network notes go there first.
 
 <!-- support:start -->
 ## Support the project
